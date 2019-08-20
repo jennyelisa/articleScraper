@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Scraping With Mongoose</title>
-  </head>
-  <body>
+    <title>Scraping With Mongo</title>
+</head>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">MongoScraper</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Saved Articles</a>
-                    </li>
-                </ul>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MongoScraper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Saved Articles</a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline">
+            <button class="btn btn-sm btn-outline-secondary" type="button">Scrape New Articles</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Clear Articles</button>
+
+        </form>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">New York Times: Art</h1>
+            <p class="lead">Mongo Scraper</p>
+        </div>
+    </div>
+
+    <div class="container-fluid article-container">
+        <div class="card">
+            <div class="card-header">
+                <!-- article header should appear here.  -->
+                <!-- this should also be a link to take you to the actual article in a differnt tab -->
+                <h3></h3>
             </div>
-            <form class="form-inline">
-                <button class="btn btn-sm btn-outline-secondary" type="button">Scrape New Articles</button>
-                <button class="btn btn-sm btn-outline-secondary" type="button">Clear Articles</button>
+            <div class="card-body">
+                <!-- article summary and image should appear here.  -->
+                <p></p>
+                <button class="btn btn-sm btn-outline-secondary" type="button">Save Article</button>
 
-            </form>
-        </nav>
-
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">New York Times: Art</h1>
-                <p class="lead">Mongo Scraper</p>
             </div>
         </div>
-
-        
-
+    </div>
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
 
-  </body>
+
+
+</body>
+
+</html>
