@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url("images/bg.jpg")
+}
+
+.tag-line {
+    color: red; 
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 60px;
+    text-align: center;
+    text-decoration-line: underline;
+}

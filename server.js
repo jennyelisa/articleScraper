@@ -1,4 +1,4 @@
-var express = require("express");
+var express = require ("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
@@ -27,7 +27,9 @@ app.get("/", function(req, res) {
   console.log("homebase! just sitting pretty ;)")
 })
 
-//when scrape butting is clicked.
+//database app.get?
+
+//when scrape button is clicked.
 app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with axios
     axios.get("https://www.nytimes.com/section/arts").then(function(response) {
@@ -67,15 +69,15 @@ app.get("/scrape", function(req, res) {
   });
 
   //this will then show the object of articles to the user
-  // app.get("/articles", function(req, res) {
-  //   db.Article.find({})
-  //     .then(function(dbArticle) {
-  //       res.json(dbArticle);
-  //     })
-  //     .catch(function(err) {
-  //       res.json(err);
-  //     });
-  // });
+  app.get("/articles", function(req, res) {
+    db.Article.find({})
+      .then(function(dbArticle) {
+        res.json(dbArticle);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 //dont think this is needed
 
 
