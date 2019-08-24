@@ -33,18 +33,13 @@ npm run start
 ```sh
 npm run test
 ```
+## Heroku link
+(https://serene-bastion-21432.herokuapp.com/)
 
 ## Author
 
 * Github: [@jennyelisa](https://github.com/jennyelisa)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jennyelisa/articleScraper/issues).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
