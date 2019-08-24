@@ -18,9 +18,13 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongolab-slippery-13668 ";
+
+mongoose.connect(MONGODB_URI);
+
+
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/articlescraper", { useNewUrlParser: true });
-//need to check hw instruction for mongo deployment to heroku
+mongoose.connect("mongodb://localhost/articleScraper", { useNewUrlParser: true });
 
 app.get("/", function(req, res) {
   res.send("No scraped articles yet!");
