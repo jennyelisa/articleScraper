@@ -1,6 +1,6 @@
 $.getJSON("/scrape", function(data) {
     for (var i = 0; i < data.length; i++) {
-  $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+  $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + data[i].summary + "<br /></p>");
     }
   });
 
@@ -11,7 +11,7 @@ $(document).on("click", "p", function() {
 
     $.ajax({
         method: "GET",
-        url: "/scrape/" +thisId,
+        url: "/articles/" +thisId,
         
     })
     .then(function(data) {

@@ -7,6 +7,7 @@ var cheerio = require("cheerio");
 
 
 var PORT = process.env.PORT || 3000;
+console.log(PORT  + "connected")
 
 var app = express();
 
@@ -22,13 +23,9 @@ app.use(bodyParser.urlencoded({
 
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-// mongoose.connect(MONGODB_URI);
-
+mongoose.connect(MONGODB_URI);
 
 mongoose.connect("mongodb://localhost:27017/articlescraper", { useNewUrlParser: true });
-
-// Connect to the Mongo DB
-// mongoose.connect("mongodb://localhost/articlescraper", { useNewUrlParser: true });
 
 
 app.get("/", function(req, res) {
