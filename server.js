@@ -1,13 +1,12 @@
 var express = require ("express");
+var bodyParser = require("body-parser")
 var logger = require("morgan");
 var mongoose = require("mongoose");
-
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -17,18 +16,24 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({
+  extended:false
+}));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongolab-slippery-13668 ";
 
-mongoose.connect(MONGODB_URI);
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+// mongoose.connect(MONGODB_URI);
 
+
+mongoose.connect("mongodb://localhost:27017/articlescraper", { useNewUrlParser: true });
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/articleScraper", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/articlescraper", { useNewUrlParser: true });
+
 
 app.get("/", function(req, res) {
   res.send("No scraped articles yet!");
-  console.log("homebase! just sitting pretty ;)")
+  console.log("homebase! just sitting pretty.")
 })
 
 //database app.get?
